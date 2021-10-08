@@ -6,7 +6,9 @@ import { MenuContainer } from "./styles";
 const Menu: React.FC = () => {
   return (
     <MenuContainer>
-      <LogoMenu />
+      <a href="/">
+        <LogoMenu />
+      </a>
     </MenuContainer>
   );
 };

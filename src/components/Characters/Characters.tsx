@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Grid } from "@material-ui/core";
 import {
   Container,
+  HeroGridContainer,
   HeroGrid,
   HeroImg,
   HeroName,
@@ -10,9 +10,6 @@ import {
 } from "./styles";
 
 import api from "services/api";
-
-const PUBLIC_KEY = "343213573d48ff61c624d9093ca051ed";
-const HASH = "e831a8c0e195ad81e7eae36e8954d522";
 
 interface Characters {
   id: number;
@@ -28,7 +25,7 @@ const Herois: React.FC = () => {
 
   const getCharacters = async () => {
     const result = await api.get(
-      `characters?ts=1&apikey=${PUBLIC_KEY}&hash=${HASH}`
+      `characters?ts=1&apikey=${process.env.REACT_APP_PUBLIC_KEY}&hash=${process.env.REACT_APP_HASH}`
     );
 
     setCharacters(result.data.data.results);
@@ -42,7 +39,7 @@ const Herois: React.FC = () => {
     <>
       <Container>
         <HeroisTitle>Characters</HeroisTitle>
-        <Grid container>
+        <HeroGridContainer container>
           {characters.map(function (Hero) {
             return (
               <HeroGrid
@@ -52,7 +49,7 @@ const Herois: React.FC = () => {
                 justifyContent="center"
                 alignItems="center"
               >
-                <HeroLink href={`/${Hero.id}`}>
+                <HeroLink href={`/CharacterDetail/${Hero.id}`}>
                   <HeroImg
                     src={`${Hero.thumbnail.path}/standard_fantastic.${Hero.thumbnail.extension}`}
                     alt={Hero.name}
@@ -62,7 +59,7 @@ const Herois: React.FC = () => {
               </HeroGrid>
             );
           })}
-        </Grid>
+        </HeroGridContainer>
       </Container>
     </>
   );

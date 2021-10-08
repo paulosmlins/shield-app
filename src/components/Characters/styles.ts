@@ -2,12 +2,16 @@ import styled from "styled-components";
 import { Grid } from "@material-ui/core";
 
 export const Container = styled.div`
-  width: 65%;
+  width: 60%;
   padding: 50px 0 0 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+export const HeroGridContainer = styled(Grid)`
+  gap: 10px 10px;
 `;
 
 export const HeroGrid = styled(Grid)`
@@ -28,7 +32,7 @@ export const HeroisTitle = styled.h1`
 `;
 
 export const HeroImg = styled.img`
-  border-radius: 1000%;
+  border-radius: 100%;
   transition: transform 0.3s;
   transform: scale(1);
   box-shadow: 0 0 30px rgb(7, 11, 46, 30%);

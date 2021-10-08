@@ -9,6 +9,10 @@ export const MenuContainer = styled.div`
   display: flex;
   justify-content: center;
   background-color: #070b2d;
+
+  a {
+    height: 80px;
+  }
 `;
 
 export const Logo = styled.svg``;

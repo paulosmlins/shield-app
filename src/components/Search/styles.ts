@@ -8,9 +8,9 @@ export const Title = styled.h1`
 
 export const Title1 = styled.span`
   color: #0d123f;
-  background-color: rgb(255, 255, 255, 80%);
+  background-color: #fff;
   border-radius: 50px;
-  padding: 0 10px;
+  padding: 0 8px;
 `;
 
 export const SearchContainer = styled.div`

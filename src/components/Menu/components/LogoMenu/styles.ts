@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
 export const LogoMenu = styled.img`
-  height: 80%;
+  height: 50%;
   padding: 20px;
 `;
