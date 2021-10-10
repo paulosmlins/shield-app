@@ -48,7 +48,8 @@ const Comics: React.FC = () => {
             return (
               <ComicsGrid
                 item
-                md={2}
+                xs
+                md
                 direction="column"
                 justifyContent="normal"
                 alignItems="center"

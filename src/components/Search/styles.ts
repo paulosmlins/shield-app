@@ -6,13 +6,6 @@ export const Title = styled.h1`
   margin: 0;
 `;
 
-export const Title1 = styled.span`
-  color: #0d123f;
-  background-color: #fff;
-  border-radius: 50px;
-  padding: 0 8px;
-`;
-
 export const SearchContainer = styled.div`
   width: 100%;
   gap: 20px 0;
@@ -21,31 +14,50 @@ export const SearchContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #0d123f;
+  background-color: #000;
 `;
 
 export const SearchBox = styled.div`
-  width: 500px;
-  height: auto;
   border-radius: 40px;
   background-color: #fff;
-  align-items: center;
-  justify-content: space-between;
+  padding: 0 20px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const SearchForm = styled.form`
+  display: flex;
+  gap: 0 10px;
   flex-direction: row;
-  margin: 20px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const SearchButton = styled.button`
+  height: 100%;
+  align-items: center;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color: red;
+`;
+
+export const IconSearch = styled.img`
+  height: 100%;
 `;
 
 export const SearchInput = styled.input`
   background-color: transparent;
   text-align: center;
   border-radius: 60px;
-  padding: 0 20px;
   margin: 8px 0;
-  width: 100%;
+  width: 500px;
   height: 30px;
   border: 0 none;
-  color: rgb(7, 11, 46, 100%);
+  color: #000;
   font-size: 1.1rem;
   font-weight: bold;
 
@@ -54,4 +66,22 @@ export const SearchInput = styled.input`
     border: 0 none;
     outline: 0;
   }
+`;
+
+export const Line = styled.hr`
+  width: 100px;
+  height: 4px;
+  border-radius: 100%;
+  filter: blur(2px);
+  background-color: #fa00ff;
+  border: none;
+  margin: 6px 0;
+`;
+
+export const TitleLine = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 `;

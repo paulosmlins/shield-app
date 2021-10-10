@@ -14,12 +14,12 @@ export const CharacterContainer = styled.div`
 `;
 
 export const CharacterGridContainer = styled(Grid)`
-  width: 60%;
+  width: 100%;
   gap: 0 60px;
 `;
 
 export const CharacterGrid = styled(Grid)`
-  padding: 30px 0;
+  padding: 20px 0 80px 0;
   margin: 0;
   gap: 20px 0;
   display: flex;
@@ -30,18 +30,25 @@ export const CharacterGrid = styled(Grid)`
 
 export const CharactersTitle = styled.h1`
   text-align: center;
-  margin-bottom: 50px;
+  margin: 0;
+  padding: 0;
 `;
 
 export const CharacterImg = styled.img`
   width: 340px;
   border-radius: 100%;
-  box-shadow: 0 0 30px rgb(7, 11, 46, 30%);
+  box-shadow: 0 0 30px rgb(0, 0, 0, 30%);
 `;
 
 export const CharacterName = styled.h3`
-  margin: 0;
-  color: rgb(7, 11, 46, 100%);
+  margin: 0 30px 0 0;
+  color: #fa00ff;
+  text-align: left;
+`;
+
+export const CharacterDesc = styled.h3`
+  margin: 0 30px 0 0;
+  color: #000;
   text-align: left;
 `;
 
@@ -53,11 +60,22 @@ export const CharacterTags = styled.p`
 export const CharacterLink = styled.a`
   margin: 0;
   padding: 0;
-  color: rgb(7, 11, 46, 100%);
+  color: #000;
   text-decoration: none;
 `;
 
-export const Line = styled.div`
-  width: 30px;
-  border: 5 solid rgb(7, 11, 46, 100%); ;
+export const Line = styled.hr`
+  width: 100px;
+  height: 4px;
+  border-radius: 100%;
+  background-color: #fa00ff;
+  border: none;
+  margin: 6px 0;
+`;
+
+export const TitleLine = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Menu from "components/Menu";
 import { useParams } from "react-router-dom";
 
 import {
@@ -7,9 +6,12 @@ import {
   CharacterGrid,
   CharacterImg,
   CharacterName,
+  CharacterDesc,
   CharacterTags,
   CharacterGridContainer,
   CharactersTitle,
+  TitleLine,
+  Line,
 } from "./styles";
 import ComicsList from "./components/Comics";
 
@@ -18,15 +20,6 @@ import api from "services/api";
 interface Characters {
   id: number;
   name: string;
-  description: string;
-  thumbnail: {
-    path: string;
-    extension: string;
-  };
-}
-
-interface Comics {
-  title: string;
   description: string;
   thumbnail: {
     path: string;
@@ -52,9 +45,12 @@ const Character: React.FC = () => {
 
   return (
     <>
-      <Menu />
       <CharacterContainer>
-        <CharactersTitle>About</CharactersTitle>
+        <TitleLine>
+          <CharactersTitle>About</CharactersTitle>
+          <Line />
+        </TitleLine>
+
         <CharacterGridContainer
           container
           justifyContent="center"
@@ -73,14 +69,17 @@ const Character: React.FC = () => {
             </div>
             <div>
               <CharacterTags>Description:</CharacterTags>
-              <CharacterName>
+              <CharacterDesc>
                 {characters?.description ||
                   `Search error... ${characters?.name} it's still a mystery and doesn't have any extra details`}
-              </CharacterName>
+              </CharacterDesc>
             </div>
           </CharacterGrid>
         </CharacterGridContainer>
-        <CharactersTitle>{characters?.name} Comics</CharactersTitle>
+        <TitleLine>
+          <CharactersTitle>{characters?.name} Comics</CharactersTitle>
+          <Line />
+        </TitleLine>
         <ComicsList />
       </CharacterContainer>
     </>

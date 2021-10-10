@@ -1,6 +1,15 @@
 import styled from "styled-components";
 import { Grid } from "@material-ui/core";
 
+export const ContainerAll = styled.div`
+  width: 100%;
+  display: flex;
+  background-color: #f2f2f2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Container = styled.div`
   width: 60%;
   padding: 50px 0 80px 0;

@@ -7,6 +7,8 @@ import {
   HeroName,
   HeroLink,
   HeroisTitle,
+  TitleLine,
+  Line,
 } from "./styles";
 
 import api from "services/api";
@@ -38,7 +40,11 @@ const Herois: React.FC = () => {
   return (
     <>
       <Container>
-        <HeroisTitle>Characters</HeroisTitle>
+        <TitleLine>
+          <HeroisTitle>Characters</HeroisTitle>
+          <Line />
+        </TitleLine>
+
         <HeroGridContainer container>
           {characters.map(function (Hero) {
             return (
@@ -49,7 +55,7 @@ const Herois: React.FC = () => {
                 justifyContent="center"
                 alignItems="center"
               >
-                <HeroLink href={`/CharacterDetail/${Hero.id}`}>
+                <HeroLink href={`/characterDetail/${Hero.id}`}>
                   <HeroImg
                     src={`${Hero.thumbnail.path}/standard_fantastic.${Hero.thumbnail.extension}`}
                     alt={Hero.name}
