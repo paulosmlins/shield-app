@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import api from "services/api";
+import CharacterType from "types/Characters";
+
+import ComicsList from "./components/Comics";
 import {
   CharacterContainer,
   CharacterGrid,
@@ -12,22 +16,9 @@ import {
   CharactersTitle,
   TitleLine,
 } from "./styles";
-import ComicsList from "./components/Comics";
-
-import api from "services/api";
-
-interface Characters {
-  id: number;
-  name: string;
-  description: string;
-  thumbnail: {
-    path: string;
-    extension: string;
-  };
-}
 
 const Character: React.FC = () => {
-  const [characters, setCharacters] = useState<Characters>();
+  const [characters, setCharacters] = useState<CharacterType>();
   const params = useParams<{ id: string }>();
 
   const getCharacters = async () => {

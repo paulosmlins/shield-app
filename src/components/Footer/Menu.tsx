@@ -1,6 +1,6 @@
 import React from "react";
 import LogosFooter from "./components/LogosFooter";
-//import SearchBar from "./components/search";
+
 import { FooterContainer, DevName } from "./styles";
 
 const Footer: React.FC = () => {

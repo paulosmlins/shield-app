@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useHistory } from "react-router";
 
 import api from "services/api";
+import Characters from "types/Characters";
 
 import {
   Container,
@@ -16,17 +17,8 @@ import {
   Line,
 } from "./styles";
 
-interface ICharacters {
-  id: number;
-  name: string;
-  thumbnail: {
-    path: string;
-    extension: string;
-  };
-}
-
 const Herois: React.FC = () => {
-  const [characters, setCharacters] = useState<ICharacters[]>([]);
+  const [characters, setCharacters] = useState<Characters[]>([]);
   const params = useParams<{ props: string }>();
   const history = useHistory();
 
@@ -44,7 +36,7 @@ const Herois: React.FC = () => {
 
   useEffect(() => {
     getCharacters();
-  });
+  }, []);
 
   return (
     <Container>

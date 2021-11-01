@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import api from "services/api";
+
 import {
   ComicsContainer,
   ComicsGrid,
@@ -8,8 +10,6 @@ import {
   ComicsName,
   ComicsGridContainer,
 } from "./styles";
-
-import api from "services/api";
 
 interface IComics {
   title: string;

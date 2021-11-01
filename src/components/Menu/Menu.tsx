@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import LogoMenu from "./components/LogoMenu";
-import { MenuContainer, MenuLink } from "./styles";
+import { MenuContainer } from "./styles";
 
 const Menu: React.FC = () => {
   return (

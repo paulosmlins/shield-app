@@ -1,9 +1,10 @@
 import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+
 import Home from "pages/Home";
 import Page404 from "pages/404";
 import Character from "pages/Character";
 import Search from "pages/Search";
-import { Switch, Route, Redirect } from "react-router-dom";
 
 const App: React.FC = () => {
   return (

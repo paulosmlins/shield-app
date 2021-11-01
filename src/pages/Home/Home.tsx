@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Container } from "./styles";
-
 import Herois from "components/Characters";
 import Search from "components/Search";
+
+import { Container } from "./styles";
 
 const Home: React.FC = () => {
   return (
