@@ -6,7 +6,6 @@ export const FooterContainer = styled.div`
   margin: 0;
   align-items: center;
   padding: 25px 0;
-  box-shadow: 0 0 20px #fa00ff;
   display: flex;
   flex-direction: column;
   justify-content: center;

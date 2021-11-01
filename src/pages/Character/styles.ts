@@ -64,15 +64,6 @@ export const CharacterLink = styled.a`
   text-decoration: none;
 `;
 
-export const Line = styled.hr`
-  width: 100px;
-  height: 4px;
-  border-radius: 100%;
-  background-color: #fa00ff;
-  border: none;
-  margin: 6px 0;
-`;
-
 export const TitleLine = styled.div`
   display: flex;
   flex-direction: column;

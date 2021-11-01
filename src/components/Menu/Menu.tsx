@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import LogoMenu from "./components/LogoMenu";
-//import SearchBar from "./components/search";
 import { MenuContainer, MenuLink } from "./styles";
 
 const Menu: React.FC = () => {
   return (
     <MenuContainer>
-      <MenuLink href="/">
+      <Link to="/">
         <LogoMenu />
-      </MenuLink>
+      </Link>
     </MenuContainer>
   );
 };

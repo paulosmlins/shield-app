@@ -3,26 +3,19 @@ import Home from "pages/Home";
 import Page404 from "pages/404";
 import Character from "pages/Character";
 import Search from "pages/Search";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/characterDetail/:id" component={Character} />
-        <Route path="/search/:props" component={Search} />
-        <Route exact path="/404" component={Page404} />
-        <Route path="*">
-          <Redirect to="/404" />
-        </Route>
-      </Switch>
-    </Router>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/characterDetail/:id" component={Character} />
+      <Route path="/search/:props" component={Search} />
+      <Route exact path="/404" component={Page404} />
+      <Route path="*">
+        <Redirect to="/404" />
+      </Route>
+    </Switch>
   );
 };
 

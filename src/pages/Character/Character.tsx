@@ -11,7 +11,6 @@ import {
   CharacterGridContainer,
   CharactersTitle,
   TitleLine,
-  Line,
 } from "./styles";
 import ComicsList from "./components/Comics";
 
@@ -48,7 +47,6 @@ const Character: React.FC = () => {
       <CharacterContainer>
         <TitleLine>
           <CharactersTitle>About</CharactersTitle>
-          <Line />
         </TitleLine>
 
         <CharacterGridContainer
@@ -78,7 +76,6 @@ const Character: React.FC = () => {
         </CharacterGridContainer>
         <TitleLine>
           <CharactersTitle>{characters?.name} Comics</CharactersTitle>
-          <Line />
         </TitleLine>
         <ComicsList />
       </CharacterContainer>

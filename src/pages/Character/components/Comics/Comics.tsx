@@ -11,7 +11,7 @@ import {
 
 import api from "services/api";
 
-interface Comics {
+interface IComics {
   title: string;
   description: string;
   thumbnail: {
@@ -21,12 +21,12 @@ interface Comics {
 }
 
 const Comics: React.FC = () => {
-  const [comics, setComics] = useState<Comics[]>([]);
+  const [comics, setComics] = useState<IComics[]>([]);
   const params = useParams<{ id: string }>();
 
   const getComics = async () => {
     const result = await api.get(
-      `characters/${params.id}/comics?ts=1&apikey=${process.env.REACT_APP_PUBLIC_KEY}&hash=${process.env.REACT_APP_HASH}`
+      `characters/${params.id}/comics?limit=50&ts=1&apikey=${process.env.REACT_APP_PUBLIC_KEY}&hash=${process.env.REACT_APP_HASH}`
     );
 
     setComics(result.data.data.results);

@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router";
+
+import api from "services/api";
 
 import {
   Container,
@@ -13,9 +16,7 @@ import {
   Line,
 } from "./styles";
 
-import api from "services/api";
-
-interface Characters {
+interface ICharacters {
   id: number;
   name: string;
   thumbnail: {
@@ -25,8 +26,9 @@ interface Characters {
 }
 
 const Herois: React.FC = () => {
-  const [characters, setCharacters] = useState<Characters[]>([]);
+  const [characters, setCharacters] = useState<ICharacters[]>([]);
   const params = useParams<{ props: string }>();
+  const history = useHistory();
 
   const getCharacters = async () => {
     const result = await api.get(
@@ -34,7 +36,7 @@ const Herois: React.FC = () => {
     );
 
     if (result.data.data.total === 0) {
-      window.location.href = "/404";
+      history.push("/404");
     } else {
       setCharacters(result.data.data.results);
     }
@@ -42,7 +44,7 @@ const Herois: React.FC = () => {
 
   useEffect(() => {
     getCharacters();
-  }, []);
+  });
 
   return (
     <Container>
@@ -61,7 +63,7 @@ const Herois: React.FC = () => {
               justifyContent="center"
               alignItems="center"
             >
-              <HeroLink href={`/CharacterDetail/${Hero.id}`}>
+              <HeroLink to={`/CharacterDetail/${Hero.id}`}>
                 <HeroImg
                   src={`${Hero.thumbnail.path}/standard_fantastic.${Hero.thumbnail.extension}`}
                   alt={Hero.name}

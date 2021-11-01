@@ -7,12 +7,10 @@ import Search from "components/Search";
 
 const Home: React.FC = () => {
   return (
-    <>
-      <Container>
-        <Search />
-        <Herois />
-      </Container>
-    </>
+    <Container>
+      <Search />
+      <Herois />
+    </Container>
   );
 };
 

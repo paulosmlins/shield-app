@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
+
+import Search from "assets/Search.png";
+
 import {
   Title,
   SearchContainer,
@@ -8,27 +12,30 @@ import {
   SearchBox,
   SearchForm,
   TitleLine,
-  Line,
 } from "./styles";
-import Search from "assets/Search.svg";
 
 const SearchBar: React.FC = () => {
   const [props, setProps] = useState("");
+  const history = useHistory();
   const getProps = (e: any) => {
     setProps(e.target.value);
   };
 
   const searchSubmit = (e: any) => {
-    window.location.href = `/search/${props}`;
-    e.preventDefault();
-    return false;
+    if (props === "") {
+      e.preventDefault();
+      return false;
+    } else {
+      history.push(`/search/${props}`);
+      e.preventDefault();
+      return false;
+    }
   };
 
   return (
     <SearchContainer>
       <TitleLine>
         <Title>Shield Files</Title>
-        <Line />
       </TitleLine>
 
       <SearchBox>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Grid } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 60%;
@@ -49,20 +50,11 @@ export const HeroName = styled.h3`
   color: rgb(7, 11, 46, 100%);
 `;
 
-export const HeroLink = styled.a`
+export const HeroLink = styled(Link)`
   margin: 0;
   padding: 0;
   color: rgb(7, 11, 46, 100%);
   text-decoration: none;
-`;
-
-export const Line = styled.hr`
-  width: 100px;
-  height: 4px;
-  border-radius: 100%;
-  background-color: #fa00ff;
-  border: none;
-  margin: 6px 0;
 `;
 
 export const TitleLine = styled.div`
