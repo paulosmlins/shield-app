@@ -34,43 +34,41 @@ const Character: React.FC = () => {
   }, [params.id]);
 
   return (
-    <>
-      <CharacterContainer>
-        <TitleLine>
-          <CharactersTitle>About</CharactersTitle>
-        </TitleLine>
+    <CharacterContainer>
+      <TitleLine>
+        <CharactersTitle>About</CharactersTitle>
+      </TitleLine>
 
-        <CharacterGridContainer
-          container
-          justifyContent="center"
-          alignItems="center"
-        >
-          <CharacterGrid container item md={3}>
-            <CharacterImg
-              src={`${characters?.thumbnail.path}/standard_fantastic.${characters?.thumbnail.extension}`}
-              alt={characters?.name}
-            />
-          </CharacterGrid>
-          <CharacterGrid container item md={5} direction="column">
-            <div>
-              <CharacterTags>Name:</CharacterTags>
-              <CharacterName>{characters?.name}</CharacterName>
-            </div>
-            <div>
-              <CharacterTags>Description:</CharacterTags>
-              <CharacterDesc>
-                {characters?.description ||
-                  `Search error... ${characters?.name} it's still a mystery and doesn't have any extra details`}
-              </CharacterDesc>
-            </div>
-          </CharacterGrid>
-        </CharacterGridContainer>
-        <TitleLine>
-          <CharactersTitle>{characters?.name} Comics</CharactersTitle>
-        </TitleLine>
-        <ComicsList />
-      </CharacterContainer>
-    </>
+      <CharacterGridContainer
+        container
+        justifyContent="center"
+        alignItems="center"
+      >
+        <CharacterGrid container item md={3}>
+          <CharacterImg
+            src={`${characters?.thumbnail.path}/standard_fantastic.${characters?.thumbnail.extension}`}
+            alt={characters?.name}
+          />
+        </CharacterGrid>
+        <CharacterGrid container item md={5} direction="column">
+          <div>
+            <CharacterTags>Name:</CharacterTags>
+            <CharacterName>{characters?.name}</CharacterName>
+          </div>
+          <div>
+            <CharacterTags>Description:</CharacterTags>
+            <CharacterDesc>
+              {characters?.description ||
+                `Search error... ${characters?.name} it's still a mystery and doesn't have any extra details`}
+            </CharacterDesc>
+          </div>
+        </CharacterGrid>
+      </CharacterGridContainer>
+      <TitleLine>
+        <CharactersTitle>{characters?.name} Comics</CharactersTitle>
+      </TitleLine>
+      <ComicsList />
+    </CharacterContainer>
   );
 };
 
